@@ -15,7 +15,7 @@ export KBUILD_BUILD_USER="StormbreakerCI-BOT"
 export GCC_COMPILE="$GCC" 
 export CLANG_VER="$clang_ver"
 export KBUILD_BUILD_HOST="Stormbreaker-HQ"
-export REVISION="8.3"
+export REVISION="R-tag-rebase"
 
 #==============================================================
 #===================== Function Definition ====================
@@ -81,13 +81,13 @@ else
 	fi
 fi
 
-rm -rf $ZIP_DIR && git clone https://github.com/Prosecuter/AnyKernel3 $ZIP_DIR
+rm -rf $ZIP_DIR && git clone https://github.com/stormbreaker-project/AnyKernel3 $ZIP_DIR
 }
 
 function clone_kernel(){
 
 mkdir -p $KERNEL_DIR
-git clone --depth=1 https://${GITHUB_USER}@github.com/stormbreaker-project/kernel_xiaomi_vince -b r11.0-test $KERNEL_DIR
+git clone --depth=1 https://${GITHUB_USER}@github.com/stormbreaker-project/kernel_xiaomi_vince -b r11.0 $KERNEL_DIR
 cd $KERNEL_DIR
 
 }
