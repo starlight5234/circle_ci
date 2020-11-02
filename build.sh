@@ -81,7 +81,7 @@ else
 	fi
 fi
 
-rm -rf $ZIP_DIR && git clone https://github.com/stormbreaker-project/AnyKernel3 $ZIP_DIR
+rm -rf $ZIP_DIR && git clone https://github.com/stormbreaker-project/AnyKernel3 -b vince $ZIP_DIR
 }
 
 function clone_kernel(){
