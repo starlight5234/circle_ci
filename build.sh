@@ -143,7 +143,7 @@ cd $ZIP_DIR
 make clean &>/dev/null
 cp $KERN_IMG $ZIP_DIR/zImage
 make zip &>/dev/null
-ZIP=$(find $ZIP_DIR/*.zip)
+ZIP=$(find -iname '*.zip')
 tg_pushzip
 
 }
