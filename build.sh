@@ -146,6 +146,7 @@ NAME="StormBreaker-Kernel"
 DATE=$(date "+%d%m%Y-%I%M")
 STORM_ZIP_NAME=${NAME}-${KERN_VER}-${DEVICE}-${DATE}.zip
 EXCLUDE="Storm* *placeholder* .git"
+rm -rf .git
 zip -r9 "$STORM_ZIP_NAME" . -x $EXCLUDE &> /dev/null
 ls
 ZIP=$(echo *.zip)
