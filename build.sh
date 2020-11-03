@@ -2,8 +2,8 @@
 # Copyright (C) 2020 Starlight
 #
 
-export DEVICE="Vince"
-export CONFIG="vince-perf_defconfig"
+export DEVICE="Memedo"
+export CONFIG="mido_defconfig"
 export JOBS=$(nproc --all)
 export CHANNEL_ID="$CHAT_ID"
 export TELEGRAM_TOKEN="$BOT_API_KEY"
@@ -15,7 +15,7 @@ export KBUILD_BUILD_USER="StormbreakerCI-BOT"
 export GCC_COMPILE="$GCC" 
 export CLANG_VER="$clang_ver"
 export KBUILD_BUILD_HOST="Stormbreaker-HQ"
-export REVISION="sleepy-cib"
+export REVISION="pa-mido-1"
 
 #==============================================================
 #===================== Function Definition ====================
@@ -81,13 +81,13 @@ else
 	fi
 fi
 
-rm -rf $ZIP_DIR && git clone https://github.com/stormbreaker-project/AnyKernel3 -b vince $ZIP_DIR
+rm -rf $ZIP_DIR && git clone https://github.com/starlight5234/AnyKernel3 -b mido $ZIP_DIR
 }
 
 function clone_kernel(){
 
 mkdir -p $KERNEL_DIR
-git clone --depth=1 https://${GITHUB_USER}@github.com/stormbreaker-project/kernel_xiaomi_vince -b r11.0 $KERNEL_DIR
+git clone --depth=1 https://${GITHUB_USER}@github.com/msm8953-dev/android_kernel_xiaomi_msm8953 -b common $KERNEL_DIR
 cd $KERNEL_DIR
 
 }
@@ -142,10 +142,10 @@ fi
 cd $ZIP_DIR
 make clean &>/dev/null
 cp $KERN_IMG $ZIP_DIR/zImage
-NAME="StormBreaker-Kernel"
+NAME="PA-Common-Kernel"
 DATE=$(date "+%d%m%Y-%I%M")
 STORM_ZIP_NAME=${NAME}-${KERN_VER}-${DEVICE}-${DATE}.zip
-EXCLUDE="Storm* *placeholder* .git"
+EXCLUDE="PA* *placeholder* .git"
 rm -rf .git
 zip -r9 "$STORM_ZIP_NAME" . -x $EXCLUDE &> /dev/null
 ls
