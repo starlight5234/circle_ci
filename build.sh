@@ -87,7 +87,7 @@ rm -rf $ZIP_DIR && git clone https://github.com/stormbreaker-project/AnyKernel3 
 function clone_kernel(){
 
 mkdir -p $KERNEL_DIR
-git clone --depth=1 https://${GITHUB_USER}@github.com/stormbreaker-project/kernel_xiaomi_vince -b r11.0 $KERNEL_DIR
+git clone --depth=1 https://${GITHUB_USER}@github.com/stormbreaker-project/kernel_xiaomi_vince -b cam-test $KERNEL_DIR
 cd $KERNEL_DIR
 
 }
