@@ -15,7 +15,7 @@ export KBUILD_BUILD_USER="StormbreakerCI-BOT"
 export GCC_COMPILE="$GCC" 
 export CLANG_VER="$clang_ver"
 export KBUILD_BUILD_HOST="Stormbreaker-HQ"
-export REVISION="no-boobs-cam-mochi"
+export REVISION="no-boobs-please-fix-my-cam-someone-help"
 
 #==============================================================
 #===================== Function Definition ====================
