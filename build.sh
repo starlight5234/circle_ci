@@ -15,7 +15,7 @@ export KBUILD_BUILD_USER="StormbreakerCI-BOT"
 export GCC_COMPILE="$GCC" 
 export CLANG_VER="$clang_ver"
 export KBUILD_BUILD_HOST="Stormbreaker-HQ"
-export REVISION="DStune-boobs"
+export REVISION="fuck-DStune-my-homies-use-cib"
 
 #==============================================================
 #===================== Function Definition ====================
