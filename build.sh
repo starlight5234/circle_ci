@@ -3,7 +3,7 @@
 #
 
 export DEVICE="Vince"
-export CONFIG="vince_defconfig"
+export CONFIG="vince-perf_defconfig"
 export JOBS=$(nproc --all)
 export CHANNEL_ID="$CHAT_ID"
 export TELEGRAM_TOKEN="$BOT_API_KEY"
@@ -15,7 +15,7 @@ export KBUILD_BUILD_USER="StormbreakerCI-BOT"
 export GCC_COMPILE="$GCC" 
 export CLANG_VER="$clang_ver"
 export KBUILD_BUILD_HOST="Stormbreaker-HQ"
-export REVISION="los-common-kranul-1"
+export REVISION="video-playback-fix-1"
 
 #==============================================================
 #===================== Function Definition ====================
@@ -87,7 +87,7 @@ rm -rf $ZIP_DIR && git clone https://github.com/stormbreaker-project/AnyKernel3 
 function clone_kernel(){
 
 mkdir -p $KERNEL_DIR
-git clone --depth=1 https://${GITHUB_USER}@github.com/stormbreaker-project/kernel_xiaomi_vince -b lineage-18.0 $KERNEL_DIR
+git clone --depth=1 https://${GITHUB_USER}@github.com/stormbreaker-project/kernel_xiaomi_vince -b test $KERNEL_DIR
 cd $KERNEL_DIR
 
 }
