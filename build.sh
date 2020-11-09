@@ -15,7 +15,7 @@ export KBUILD_BUILD_USER="StormbreakerCI-BOT"
 export GCC_COMPILE="$GCC" 
 export CLANG_VER="$clang_ver"
 export KBUILD_BUILD_HOST="Stormbreaker-HQ"
-export REVISION="video-playback-fix-1"
+export REVISION="fuck-me-I-am-n00b-af-wtf"
 
 #==============================================================
 #===================== Function Definition ====================
