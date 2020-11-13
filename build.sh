@@ -15,7 +15,7 @@ export KBUILD_BUILD_USER="StormbreakerCI-BOT"
 export GCC_COMPILE="$GCC" 
 export CLANG_VER="$clang_ver"
 export KBUILD_BUILD_HOST="Stormbreaker-HQ"
-export REVISION="fuck-me-I-am-n00b-af-wtf-part-69"
+export REVISION="pelt-cib"
 
 #==============================================================
 #===================== Function Definition ====================
