@@ -12,7 +12,7 @@ export ZIP_DIR="$HOME/AK3"
 export IS_MIUI="no"
 export KERNEL_DIR="$HOME/kernel"
 export KBUILD_BUILD_USER="StormbreakerCI-BOT"
-export GCC_COMPILE="$GCC" 
+export GCC_COMPILE="yes" 
 export CLANG_VER="$clang_ver"
 export KBUILD_BUILD_HOST="Stormbreaker-HQ"
 export REVISION="pelt-Q-tag"
@@ -87,7 +87,7 @@ rm -rf $ZIP_DIR && git clone https://github.com/stormbreaker-project/AnyKernel3 
 function clone_kernel(){
 
 mkdir -p $KERNEL_DIR
-git clone --depth=1 https://${GITHUB_USER}@github.com/stormbreaker-project/kernel_xiaomi_vince -b testing $KERNEL_DIR
+git clone --depth=1 https://${GITHUB_USER}@github.com/aosp-star/kernel_xiaomi_vince -b LA.UM.9.6.2.r1-02800-89xx.0-vince $KERNEL_DIR
 cd $KERNEL_DIR
 
 }
