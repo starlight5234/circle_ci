@@ -15,7 +15,7 @@ export KBUILD_BUILD_USER="StormbreakerCI-BOT"
 export GCC_COMPILE="yes" 
 export CLANG_VER="$clang_ver"
 export KBUILD_BUILD_HOST="Stormbreaker-HQ"
-export REVISION="R-sched-16ms"
+export REVISION="R-boobs-16ms"
 
 #==============================================================
 #===================== Function Definition ====================
