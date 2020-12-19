@@ -15,7 +15,7 @@ export KBUILD_BUILD_USER="StormbreakerCI-BOT"
 export GCC_COMPILE="yes" 
 export CLANG_VER="$clang_ver"
 export KBUILD_BUILD_HOST="Stormbreaker-HQ"
-export REVISION="R-cam-debug-3"
+export REVISION="R-audit-11"
 
 #==============================================================
 #===================== Function Definition ====================
@@ -62,8 +62,8 @@ function clone_tc() {
 [ -d ${TC_PATH} ] || mkdir ${TC_PATH}
 
 if [ "$GCC_COMPILE" == "yes" ]; then
-	git clone --depth=1 https://github.com/arter97/arm64-gcc ${TC_PATH}/gcc64
-	git clone --depth=1 https://github.com/arter97/arm32-gcc ${TC_PATH}/gcc32
+	git clone --depth=1 https://github.com/mvaisakh/gcc-arm64 -b gcc-master ${TC_PATH}/gcc64
+	git clone --depth=1 https://github.com/mvaisakh/gcc-arm -b gcc-master ${TC_PATH}/gcc32
 	export PATH="${TC_PATH}/gcc64/bin:${TC_PATH}/gcc32/bin:$PATH"
 	export STRIP="${TC_PATH}/gcc64/aarch64-elf/bin/strip"
 	export COMPILER="Arter97's Latest GCC Compiler" 
@@ -87,7 +87,7 @@ rm -rf $ZIP_DIR && git clone https://github.com/starlight5234/AnyKernel3 -b vinc
 function clone_kernel(){
 
 mkdir -p $KERNEL_DIR
-git clone --depth=1 https://${GITHUB_USER}@github.com/aosp-star/kernel_xiaomi_vince -b staging $KERNEL_DIR
+git clone --depth=1 https://${GITHUB_USER}@github.com/aosp-star/kernel_xiaomi_vince -b staging-audit $KERNEL_DIR
 cd $KERNEL_DIR
 
 }
