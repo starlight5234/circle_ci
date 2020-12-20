@@ -81,7 +81,7 @@ else
 	fi
 fi
 
-rm -rf $ZIP_DIR && git clone https://github.com/stormbreaker-project/AnyKernel3 -b vince $ZIP_DIR
+rm -rf $ZIP_DIR && git clone https://github.com/starlight5234/AnyKernel3 -b vince $ZIP_DIR
 }
 
 function clone_kernel(){
@@ -142,10 +142,10 @@ fi
 cd $ZIP_DIR
 make clean &>/dev/null
 cp $KERN_IMG $ZIP_DIR/zImage
-NAME="StormBreaker-Kernel"
+NAME="Starlight-Kernel"
 DATE=$(date "+%d%m%Y-%I%M")
 STORM_ZIP_NAME=${NAME}-${KERN_VER}-${DEVICE}-${DATE}.zip
-EXCLUDE="Storm* *placeholder* .git"
+EXCLUDE="Star* *placeholder* .git"
 rm -rf .git
 zip -r9 "$STORM_ZIP_NAME" . -x $EXCLUDE &> /dev/null
 ls
