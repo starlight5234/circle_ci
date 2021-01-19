@@ -3,7 +3,7 @@
 #
 
 export DEVICE="Saalim ka device"
-export CONFIG="X01AD-perf_defconfig"
+export CONFIG="X01AD_defconfig"
 export JOBS=$(nproc --all)
 export CHANNEL_ID="$CHAT_ID"
 export TELEGRAM_TOKEN="$BOT_API_KEY"
