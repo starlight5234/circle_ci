@@ -2,8 +2,8 @@
 # Copyright (C) 2020 Starlight
 #
 
-export DEVICE="Vince"
-export CONFIG="vince-perf_defconfig"
+export DEVICE="Saalim ka device"
+export CONFIG="X01AD-perf_defconfig"
 export JOBS=$(nproc --all)
 export CHANNEL_ID="$CHAT_ID"
 export TELEGRAM_TOKEN="$BOT_API_KEY"
@@ -15,7 +15,7 @@ export KBUILD_BUILD_USER="StormbreakerCI-BOT"
 export GCC_COMPILE="yes" 
 export CLANG_VER="$clang_ver"
 export KBUILD_BUILD_HOST="Stormbreaker-HQ"
-export REVISION="R-cam-debug-3"
+export REVISION="eleven-pe"
 
 #==============================================================
 #===================== Function Definition ====================
@@ -62,11 +62,11 @@ function clone_tc() {
 [ -d ${TC_PATH} ] || mkdir ${TC_PATH}
 
 if [ "$GCC_COMPILE" == "yes" ]; then
-	git clone --depth=1 https://github.com/arter97/arm64-gcc ${TC_PATH}/gcc64
-	git clone --depth=1 https://github.com/arter97/arm32-gcc ${TC_PATH}/gcc32
+	git clone --depth=1 https://github.com/stormbreaker-project/aarch64-linux-android-4.9 ${TC_PATH}/gcc64
+	git clone --depth=1 https://github.com/stormbreaker-project/arm-linux-androideabi-4.9 ${TC_PATH}/gcc32
 	export PATH="${TC_PATH}/gcc64/bin:${TC_PATH}/gcc32/bin:$PATH"
-	export STRIP="${TC_PATH}/gcc64/aarch64-elf/bin/strip"
-	export COMPILER="Arter97's Latest GCC Compiler" 
+	export STRIP="${TC_PATH}/gcc64/aarch64-linux-android/bin/strip"
+	export COMPILER="AOSP GCC Compiler" 
 else
 	if [ "$CLANG_VER" == "12" ]; then
 		git clone --depth=1 https://github.com/kdrag0n/proton-clang.git ${TC_PATH}/clang
@@ -81,13 +81,13 @@ else
 	fi
 fi
 
-rm -rf $ZIP_DIR && git clone https://github.com/starlight5234/AnyKernel3 -b vince $ZIP_DIR
+rm -rf $ZIP_DIR && git clone https://github.com/stormbreaker-project/AnyKernel3 -b X01AD $ZIP_DIR
 }
 
 function clone_kernel(){
 
 mkdir -p $KERNEL_DIR
-git clone --depth=1 https://${GITHUB_USER}@github.com/aosp-star/kernel_xiaomi_vince -b staging $KERNEL_DIR
+git clone --depth=1 https://${GITHUB_USER}@github.com/stormbreaker-project/kernel_asus_X01AD -b eleven-pe $KERNEL_DIR
 cd $KERNEL_DIR
 
 }
@@ -105,8 +105,8 @@ make O=out ARCH=arm64 "$CONFIG"
 if [ "$GCC_COMPILE" == "yes" ]; then
 	make -j$(nproc --all) O=out \
 			      ARCH=arm64 \
-			      CROSS_COMPILE=aarch64-elf- \
-			      CROSS_COMPILE_ARM32=arm-eabi- |& tee -a $LOG
+			      CROSS_COMPILE=aarch64-linux-android- \
+			      CROSS_COMPILE_ARM32=arm-linux-androideabi- |& tee -a $LOG
 else
 	make -j$(nproc --all) O=out \
 			      ARCH=arm64 \
@@ -142,10 +142,10 @@ fi
 cd $ZIP_DIR
 make clean &>/dev/null
 cp $KERN_IMG $ZIP_DIR/zImage
-NAME="Starlight-Kernel"
+NAME="StormBreaker-Kernel"
 DATE=$(date "+%d%m%Y-%I%M")
-STORM_ZIP_NAME=${NAME}-${KERN_VER}-${DEVICE}-${DATE}.zip
-EXCLUDE="Star* *placeholder* .git"
+STORM_ZIP_NAME=${NAME}-${KERN_VER}-X01AD-${DATE}.zip
+EXCLUDE="Storm* *placeholder* .git"
 rm -rf .git
 zip -r9 "$STORM_ZIP_NAME" . -x $EXCLUDE &> /dev/null
 ls
