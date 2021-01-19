@@ -87,7 +87,7 @@ rm -rf $ZIP_DIR && git clone https://github.com/stormbreaker-project/AnyKernel3 
 function clone_kernel(){
 
 mkdir -p $KERNEL_DIR
-git clone --depth=1 https://${GITHUB_USER}@github.com/stormbreaker-project/kernel_asus_X01AD -b eleven-pe $KERNEL_DIR
+git clone --depth=1 https://${GITHUB_USER}@github.com/Area42-Labs/kernel_asus_X01AD -b eleven-pe $KERNEL_DIR
 cd $KERNEL_DIR
 
 }
