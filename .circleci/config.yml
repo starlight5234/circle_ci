@@ -2,11 +2,15 @@ version: 2.1
 jobs:
   compile:
    docker:
-      - image: starlight2834/ci_docker:latest
+      - image: fr3akyphantom/droid-builder:latest
    steps:
-      - run: apt-get update -y && apt-get install openssh-client git
-      - checkout
-      - run: bash build.sh
+      - run:
+          command: |
+           git config --global user.name "starlight5234"
+           git config --global user.email "starlight5234@protonmail.ch"
+           git config --global color.ui false
+           wget https://raw.githubusercontent.com/starlight5234/android_device_xiaomi_vince_twrp/android-9.0/.circleci/twrp_ci.sh
+           source twrp_ci.sh
 workflows:
   version: 2.1
   cooking:
